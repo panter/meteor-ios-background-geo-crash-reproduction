@@ -33,6 +33,15 @@ if (Meteor.isCordova) {
   });
 }
 
+Meteor.startup(() => {
+  window.setInterval(() => Session.set('CURRENT_TIMESTAMP', new Date().getTime()), 1000);
+});
+
+Template.webserverStillAliveIndicator.helpers({
+  timestamp() {
+    return Session.get('CURRENT_TIMESTAMP');
+  },
+});
 
 Template.tracking.helpers({
   running() {
