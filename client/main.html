@@ -6,12 +6,15 @@
 
 <body>
   <h1>Tracking reproduction</h1>
-  <p><img src="/logo.svg" /></p>
-
-
+  {{>webserverStillAliveIndicator}}
   {{> tracking}}
 </body>
 
+<template name="webserverStillAliveIndicator">
+  <div>
+    <img src="/logo.svg?{{timestamp}}" /> {{timestamp}}
+  </div>
+</template>
 <template name="tracking">
 
   {{#if running}}
