@@ -1,0 +1,11 @@
+/* CSS declarations go here */
+
+
+button {
+  font-size: 40px;
+}
+
+
+.track.active {
+  font-weight: bold;
+}

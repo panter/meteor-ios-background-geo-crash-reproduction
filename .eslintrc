@@ -1,0 +1,56 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "globalReturn": true,
+      "jsx": true
+    }
+  },
+
+  "parser": "babel-eslint",
+  "plugins": [
+    "meteor",
+    "react"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:meteor/recommended",
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "server": false,
+    "browser": false,
+    "expect": false,
+    "faker": true
+  },
+  "rules": {
+    "arrow-body-style": [1, "as-needed"],
+    "no-unused-vars": ["warn", {
+      "argsIgnorePattern": "theme|context|injectDeps|actions",
+      "varsIgnorePattern": "React|Meteor|T|compose|useDeps|depsMapper|expect|spy|stub|shallow|action|setComposerStub|styled|css"
+    }],
+    "no-empty-pattern": 0,
+    "no-unused-expressions": 0,
+    "react/prop-types": 0,
+    "react/forbid-prop-types": 0,
+    "react/display-name": 0,
+    "max-len": ["error", 250],
+    "global-require": 0,
+    "consistent-return": 0,
+    "new-cap": 0,
+    "import/no-unresolved": 0,
+    "import/no-absolute-path": 0,
+    "import/no-extraneous-dependencies": 0,
+    "meteor/no-session": 0,
+    "meteor/audit-argument-checks": ["warn"],
+    "import/extensions": 0,
+    "import/imports-first": 0,
+    "no-underscore-dangle": 0,
+    "prefer-arrow-callback": 0,
+    "func-names": 0,
+    "react/jsx-filename-extension": 0,
+    "jsx-a11y/no-static-element-interactions": 0
+  }
+}

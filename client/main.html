@@ -1,0 +1,41 @@
+<head>
+  <title>meteor-ios-background-geo-crash-test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+</head>
+
+<body>
+  <h1>Tracking reproduction</h1>
+
+  {{> tracking}}
+</body>
+
+<template name="tracking">
+
+  {{#if running}}
+    <p>Tracking is running...</p>
+    <button class="stop">Stop</button>
+  {{else}}
+    <button class="start">Start</button>
+
+  {{/if}}
+
+  <ul>
+    {{#each tracks}}
+      {{>trackingTrack}}
+    {{/each}}
+  </ul>
+
+</template>
+
+<template name="trackingTrack">
+  <li class="track {{#if isCurrent}}active{{/if}}">
+    <p>Track {{_id}} - {{timestamp}}</p>
+    <p>Waypoints: </p>
+    <ul>
+      {{#each waypoints}}
+        <li>{{timestamp}} - {{coords.latitude}} {{coords.longitude}}</li>
+      {{/each}}
+    </ul>
+  </li>
+</template>
